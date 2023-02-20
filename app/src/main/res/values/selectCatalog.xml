@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="agri_type">
+        <item>全部</item>
+        <item>种植业</item>
+        <item>畜牧业</item>
+        <item>渔业</item>
+    </string-array>
+
+    <string-array name="agri_type_edit">
+        <item>种植业</item>
+        <item>畜牧业</item>
+        <item>渔业</item>
+    </string-array>
+
+    <string-array name="jujube_type2">
+        <item>全部</item>
+        <item>灰枣</item>
+        <item>骏枣</item>
+        <item>红枣</item>
+        <item>哈密大枣</item>
+        <item>金丝小枣</item>
+        <item>滩枣</item>
+        <item>鸡心枣</item>
+        <item>新郑大枣</item>
+        <item>临泽小枣</item>
+        <item>板枣</item>
+    </string-array>
+
+    <string-array name="level">
+        <item>全部</item>
+        <item>特级</item>
+        <item>一级</item>
+        <item>二级</item>
+        <item>等外</item>
+    </string-array>
+
+    <integer-array name="reminder_methods_values" translatable="false">
+        <item>-1</item>
+        <item>0</item>
+        <item>1</item>
+        <!--<item>2</item>-->
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </integer-array>
+
+    <integer-array name="reminder_methods_values2" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <!--<item>2</item>-->
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </integer-array>
+
+    <integer-array name="reminder_methods_values3" translatable="false">
+        <!--<item>-1</item>-->
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </integer-array>
+
+    <integer-array name="reminder_methods_values4" translatable="false">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>-1</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </integer-array>
+
+    <string-array name="order_status">
+        <item>待付款</item>
+        <item>待发货</item>
+        <item>待收货</item>
+        <item>待评价</item>
+        <item>已完成</item>
+        <item>已取消</item>
+        <item>余款待支付</item>
+    </string-array>
+
+    <string-array name="user_role">
+        <item>枣农</item>
+        <item>经纪人</item>
+        <item>兵团</item>
+        <item>经济合作社</item>
+        <item>公司</item>
+        <item>贸易商</item>
+        <item>厂家</item>
+        <item>炒家</item>
+        <item>消费者</item>
+    </string-array>
+
+
+</resources>

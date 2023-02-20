@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/px26dp"
+        android:paddingTop="@dimen/px26dp"
+        android:text="@string/supplier_info"
+        android:textColor="@color/black"
+        android:textSize="@dimen/px30sp" />
+
+    <TextView
+        android:id="@+id/tv_platform"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/px26dp"
+        android:text="@string/platform"
+        android:textColor="@color/black"
+        android:textSize="@dimen/px30sp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_provider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/px26dp">
+
+        <com.graduation_project.wicky.csa.utils.CircleImageView
+            android:id="@+id/iv_provider_avatar"
+            android:layout_width="@dimen/px130dp"
+            android:layout_height="@dimen/px130dp"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tv_provider_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px32dp"
+            android:layout_toRightOf="@id/iv_provider_avatar"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/px28sp" />
+
+        <com.graduation_project.wicky.csa.widget.BGButton
+            android:id="@+id/tv_provider_renzhen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px10dp"
+            android:layout_toRightOf="@id/tv_provider_name"
+            android:padding="@dimen/px4dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/px20sp"
+            app:bottomLeftRadius="@dimen/px10dp"
+            app:bottomRightRadius="@dimen/px10dp"
+            app:normalStrokeColor="@color/colorPrimary"
+            app:normalStrokeWidth="@dimen/px2dp"
+            app:topLeftRadius="@dimen/px10dp"
+            app:topRightRadius="@dimen/px10dp" />
+
+        <TextView
+            android:id="@+id/tv_provider_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_provider_name"
+            android:layout_marginLeft="@dimen/px32dp"
+            android:layout_marginTop="@dimen/px10dp"
+            android:layout_toRightOf="@id/iv_provider_avatar"
+            android:drawableLeft="@mipmap/information_ic_phone"
+            android:drawablePadding="@dimen/px10dp"
+            android:textColor="#6A6A6A"
+            android:textSize="@dimen/px24sp" />
+
+        <TextView
+            android:id="@+id/tv_provider_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_provider_phone"
+            android:layout_marginLeft="@dimen/px32dp"
+            android:layout_marginTop="@dimen/px10dp"
+            android:layout_toRightOf="@id/iv_provider_avatar"
+            android:drawableLeft="@mipmap/information_ic_location"
+            android:drawablePadding="@dimen/px10dp"
+            android:textColor="#6A6A6A"
+            android:textSize="@dimen/px24sp" />
+
+        <TextView
+            android:id="@+id/tv_provider_sale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_provider_address"
+            android:layout_marginLeft="@dimen/px32dp"
+            android:layout_marginTop="@dimen/px10dp"
+            android:layout_toRightOf="@id/iv_provider_avatar"
+            android:drawableLeft="@mipmap/information_ic_sale"
+            android:drawablePadding="@dimen/px10dp"
+            android:textColor="#6A6A6A"
+            android:textSize="@dimen/px24sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+</layout>

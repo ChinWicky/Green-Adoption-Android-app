@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.graduation_project.wicky.csa.viewModel.AdoptViewModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/title_bar"
+            layout="@layout/widget_title" />
+
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--<include layout="@layout/item_receiver_info" />-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px20dp"
+                    android:background="@color/diver_dcdcdc" />
+
+                <TextView
+                    android:id="@+id/tv_provider_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingLeft="@dimen/px30dp"
+                    android:paddingRight="@dimen/px30dp"
+                    android:paddingTop="@dimen/px30dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px30sp"
+                    android:text="@{viewModel.suppler.userName}"/>
+
+
+                <LinearLayout
+                    android:id="@+id/tv_goods_adopt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_goods_adopt"
+                        android:layout_width="@dimen/px180dp"
+                        android:layout_height="@dimen/px180dp"
+                        android:layout_margin="@dimen/px24dp"
+                        binding:url="@{viewModel.entity.goodsImgList.get(0)}"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/px10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="认养产品名："
+                                android:textColor="#6A6A6A"
+                                android:textSize="@dimen/px26sp" />
+
+                            <View
+                                android:layout_width="@dimen/px20dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/white" />
+
+                            <TextView
+                                android:id="@+id/tv_goods_name_adopt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{viewModel.entity.name}"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/px26sp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="产品单价："
+                                android:textColor="#6A6A6A"
+                                android:textSize="@dimen/px26sp" />
+
+                            <View
+                                android:layout_width="@dimen/px20dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/white" />
+
+                            <TextView
+                                android:id="@+id/tv_goods_price_adopt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@{viewModel.unitPrice}"
+                                android:textColor="@color/red"
+                                android:textSize="@dimen/px26sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px10dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="数量："
+                                android:textColor="#6A6A6A"
+                                android:textSize="@dimen/px26sp" />
+
+                            <View
+                                android:layout_width="@dimen/px20dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/white" />
+
+                            <TextView
+                                android:id="@+id/tv_goods_num_adopt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:text="@{viewModel.vNum}"
+                                android:textColor="#6A6A6A"
+                                android:textSize="@dimen/px26sp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/diver_dcdcdc"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/px30dp">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_cb_agree"
+                        android:text="@string/click_see"
+                        android:textColor="#6A6A6A"
+                        android:textSize="@dimen/px24sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_contract"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/electronic_contract"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/px24sp" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_delivery_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/px30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/contract_year"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <TextView
+                        android:id="@+id/tv_delivery_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawableRight="@mipmap/ic_next"
+                        android:gravity="center"
+                        android:hint="@string/choose_contract_year"
+                        android:text="@={viewModel.year}"
+                        android:textColor="#6A6A6A"
+                        android:textSize="@dimen/px26sp"
+                        binding:onClickCommand="@{viewModel.chooseAdoptYear}"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="@color/diver_dcdcdc" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_pay_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/px30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/pay_type"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <TextView
+                        android:id="@+id/tv_pay_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawableRight="@mipmap/ic_next"
+                        android:gravity="center"
+                        android:hint="@string/choose_pay_type"
+                        android:text="@={viewModel.payWay}"
+                        android:textColor="#6A6A6A"
+                        android:textSize="@dimen/px26sp"
+                        binding:onClickCommand="@{viewModel.choosePayWay}"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_dingjin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/diver_dcdcdc"
+                    android:padding="@dimen/px30dp"
+                    android:text="@string/earnest_explain"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/px26sp"
+                    android:visibility="gone" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="@color/diver_dcdcdc" />
+
+                <!--<RelativeLayout-->
+                    <!--android:id="@+id/rl_insurance"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:padding="@dimen/px30dp">-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:text="@string/insurance_service"-->
+                        <!--android:textColor="@color/black"-->
+                        <!--android:textSize="@dimen/px30sp" />-->
+
+                    <!--<CheckBox-->
+                        <!--android:id="@+id/cb_insurance"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:button="@drawable/selector_cb_agree" />-->
+
+                <!--</RelativeLayout>-->
+
+                <LinearLayout
+                    android:id="@+id/ll_insurance_explain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/diver_dcdcdc"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/px30dp"
+                    android:visibility="gone">
+
+                    <CheckBox
+                        android:id="@+id/cb_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/selector_cb_agree"
+                        android:text="@string/click_see"
+                        android:textColor="#6A6A6A"
+                        android:textSize="@dimen/px24sp" />
+
+                    <TextView
+                        android:id="@+id/tv_insurance_explain"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/insurance_explain"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/px24sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="@color/diver_dcdcdc" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_beizhu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/px30dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/remarks"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <EditText
+                        android:id="@+id/tv_beizhu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@color/transparent"
+                        android:gravity="right|center"
+                        android:hint="@string/please_input_remarks"
+                        android:text="@={viewModel.remark}"
+                        android:textColor="#6A6A6A"
+                        android:textSize="@dimen/px26sp" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px20dp"
+                    android:background="@color/diver_dcdcdc" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/px30dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total_price"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                        <TextView
+                            android:id="@+id/tv_goods_sum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@{String.valueOf(viewModel.goodTotal)}"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/contract_year"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                        <TextView
+                            android:id="@+id/tv_freight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@{viewModel.year}"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                    </RelativeLayout>
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="@string/insurance_price"-->
+                            <!--android:textColor="#6A6A6A"-->
+                            <!--android:textSize="@dimen/px26sp" />-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/tv_insurance"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:text="@{String.valueOf(viewModel.insurePrice)}"-->
+                            <!--android:textColor="#6A6A6A"-->
+                            <!--android:textSize="@dimen/px26sp" />-->
+
+                    <!--</RelativeLayout>-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                        <TextView
+                            android:id="@+id/tv_sum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@{String.valueOf(viewModel.sum)}"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                    </RelativeLayout>
+
+                    <!--<RelativeLayout-->
+                        <!--android:id="@+id/rl_earnest"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:visibility="gone">-->
+
+                        <!--<TextView-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="@string/earnest"-->
+                            <!--android:textColor="#6A6A6A"-->
+                            <!--android:textSize="@dimen/px26sp" />-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/tv_earnest"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:textColor="#6A6A6A"-->
+                            <!--android:textSize="@dimen/px26sp" />-->
+
+                    <!--</RelativeLayout>-->
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/px30dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/px30dp"
+                android:layout_marginTop="@dimen/px30dp"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_tag_sum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sum"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px30sp" />
+
+                <TextView
+                    android:id="@+id/tv_pay_sum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{String.valueOf(viewModel.sum)}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/px34sp" />
+
+            </LinearLayout>
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/btn_pay"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/pay"
+                binding:normalSolid="@color/colorPrimary"
+                binding:normalTextColor="@color/white"
+                binding:onClickCommand="@{viewModel.pay}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

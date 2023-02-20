@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.graduation_project.wicky.csa.viewModel.SettingViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/title_bar"
+            layout="@layout/widget_title" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:text="@string/help_center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:src="@mipmap/ic_next" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="#f8f8f8" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:text="@string/feedback"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:src="@mipmap/ic_next" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="#f8f8f8" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_protocol"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:text="@string/user_protocol"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:src="@mipmap/ic_next" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="#f8f8f8" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:text="@string/version_info"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:src="@mipmap/ic_next" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="#f8f8f8" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:text="@string/about_us"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:src="@mipmap/ic_next" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="#f8f8f8" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_check_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:text="@string/check_update"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <TextView
+                        android:id="@+id/tv_version"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:drawablePadding="@dimen/px16dp"
+                        android:drawableRight="@mipmap/ic_next"
+                        android:gravity="center"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/px30sp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <com.graduation_project.wicky.csa.widget.BGButton
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px102dp"
+            android:gravity="center"
+            android:text="@string/logout"
+            android:textSize="@dimen/px36sp"
+            binding:normalSolid="@color/colorPrimary"
+            binding:normalTextColor="@color/white"
+            binding:onClickCommand="@{viewModel.logout}"
+            binding:pressedSolid="@color/pressColor" />
+
+    </LinearLayout>
+</layout>

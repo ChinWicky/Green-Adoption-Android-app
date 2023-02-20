@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.graduation_project.wicky.csa.viewModel.MarketItemViewModel" />
+    </data>
+<LinearLayout
+    android:id="@+id/tv_goods"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    binding:onClickCommand="@{viewModel.itemClick}"
+    >
+
+    <ImageView
+        android:id="@+id/iv_goods"
+        android:layout_width="@dimen/px180dp"
+        android:layout_height="@dimen/px180dp"
+        android:layout_margin="@dimen/px24dp"
+        android:src="@{viewModel.drawableImg}"
+        binding:url="@{viewModel.entity.goodsImgList.get(0)}"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/px10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_goods_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.entity.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/px30sp" />
+
+        <TextView
+            android:id="@+id/tv_goods_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px10dp"
+            android:text="@{viewModel.unitPrice}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/px26sp" />
+
+        <TextView
+            android:id="@+id/tv_goods_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px10dp"
+            android:text="@{String.format(@string/inventoryF,viewModel.entity.inventory)}"
+            android:textColor="#6A6A6A"
+            android:textSize="@dimen/px26sp" />
+
+        <TextView
+            android:id="@+id/tv_goods_origin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px10dp"
+            android:textColor="@color/text_999999"
+            android:textSize="@dimen/px24sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
+</layout>

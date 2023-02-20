@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable name = "handler"
+        type="com.graduation_project.wicky.csa.handler.UserEventHandler">
+    </variable>
+
+    <variable
+        name="viewModel"
+        type="com.graduation_project.wicky.csa.viewModel.UserViewModel"></variable>
+
+    <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+
+    <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+</data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include  android:id="@+id/main_title"
+            layout="@layout/widget_title" />
+
+        <ScrollView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px300dp"
+                    android:layout_marginTop="-2dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+                    <com.graduation_project.wicky.csa.utils.CircleImageView
+                        android:id="@+id/iv_avatar"
+                        android:layout_width="@dimen/px130dp"
+                        android:layout_height="@dimen/px130dp"
+                        android:onClick="@{handler::onClick}"
+                        android:src="@mipmap/ic_me_head" />
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/px22dp"
+                        android:text="@{viewModel.user.userName}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/px36sp" />
+                </LinearLayout>
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px240dp"-->
+                <!--android:layout_marginLeft="@dimen/px16dp"-->
+                <!--android:layout_marginTop="-14dp"-->
+                <!--android:layout_marginRight="@dimen/px16dp"-->
+                <!--android:background="@drawable/draw_user"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px80dp">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginLeft="@dimen/px20dp"-->
+                <!--android:text="@string/my_order"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="@dimen/px30dp" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_viewMore"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginRight="@dimen/px20dp"-->
+                <!--android:drawableRight="@mipmap/ic_next"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/view_more"-->
+                <!--android:textColor="@color/text_999999"-->
+                <!--android:textSize="@dimen/px26sp"-->
+                <!--android:onClick="@{handler::onClick}"/>-->
+
+                <!--</RelativeLayout>-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<FrameLayout-->
+                <!--android:id="@+id/fl_waitPay"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:onClick="@{handler::onClick}">-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical"-->
+                <!--&gt;-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/d_order_1" />-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/px22dp"-->
+                <!--android:text="@string/wait_pay"-->
+                <!--android:textColor="@color/text_333333"-->
+                <!--android:textSize="@dimen/px26sp" />-->
+                <!--</LinearLayout>-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_wait_pay_num"-->
+                <!--android:layout_width="@dimen/px36dp"-->
+                <!--android:layout_height="@dimen/px36dp"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:layout_marginTop="@dimen/px20dp"-->
+                <!--android:layout_marginRight="@dimen/px30dp"-->
+                <!--android:background="@drawable/deep_color_draw"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/px18sp"-->
+                <!--android:visibility="gone" />-->
+
+                <!--</FrameLayout>-->
+
+                <!--<FrameLayout-->
+                <!--android:id="@+id/fl_waitSend"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:onClick="@{handler::onClick}">-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical"-->
+                <!--&gt;-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/d_order_2" />-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/px22dp"-->
+                <!--android:text="@string/wait_send"-->
+                <!--android:textColor="@color/text_333333"-->
+                <!--android:textSize="@dimen/px26sp" />-->
+                <!--</LinearLayout>-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_wait_send_num"-->
+                <!--android:layout_width="@dimen/px36dp"-->
+                <!--android:layout_height="@dimen/px36dp"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:layout_marginTop="@dimen/px20dp"-->
+                <!--android:layout_marginRight="@dimen/px30dp"-->
+                <!--android:background="@drawable/deep_color_draw"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/px18sp"-->
+                <!--android:visibility="gone" />-->
+
+                <!--</FrameLayout>-->
+
+                <!--<FrameLayout-->
+                <!--android:id="@+id/fl_waitReceive"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:onClick="@{handler::onClick}">-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/d_order_3" />-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/px22dp"-->
+                <!--android:text="@string/wait_receive"-->
+                <!--android:textColor="@color/text_333333"-->
+                <!--android:textSize="@dimen/px26sp" />-->
+                <!--</LinearLayout>-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_wait_receive_num"-->
+                <!--android:layout_width="@dimen/px36dp"-->
+                <!--android:layout_height="@dimen/px36dp"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:layout_marginTop="@dimen/px20dp"-->
+                <!--android:layout_marginRight="@dimen/px30dp"-->
+                <!--android:background="@drawable/deep_color_draw"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/px18sp"-->
+                <!--android:visibility="gone" />-->
+
+                <!--</FrameLayout>-->
+
+                <!--<FrameLayout-->
+                <!--android:id="@+id/fl_waitComment"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:onClick="@{handler::onClick}">-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/d_order_4" />-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/px22dp"-->
+                <!--android:text="@string/wait_comment"-->
+                <!--android:textColor="@color/text_333333"-->
+                <!--android:textSize="@dimen/px26sp" />-->
+                <!--</LinearLayout>-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_wait_comment_num"-->
+                <!--android:layout_width="@dimen/px36dp"-->
+                <!--android:layout_height="@dimen/px36dp"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:layout_marginTop="@dimen/px20dp"-->
+                <!--android:layout_marginRight="@dimen/px30dp"-->
+                <!--android:background="@drawable/deep_color_draw"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/px18sp"-->
+                <!--android:visibility="gone" />-->
+
+                <!--</FrameLayout>-->
+
+                <!--<FrameLayout-->
+                <!--android:id="@+id/fl_afterSale"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1">-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@mipmap/d_order_5" />-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="@dimen/px22dp"-->
+                <!--android:text="@string/refund_or_aftersale"-->
+                <!--android:textColor="@color/text_333333"-->
+                <!--android:textSize="@dimen/px26sp" />-->
+                <!--</LinearLayout>-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_after_sale_num"-->
+                <!--android:layout_width="@dimen/px36dp"-->
+                <!--android:layout_height="@dimen/px36dp"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:layout_marginTop="@dimen/px20dp"-->
+                <!--android:layout_marginRight="@dimen/px30dp"-->
+                <!--android:background="@drawable/deep_color_draw"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/px18sp"-->
+                <!--android:visibility="gone" />-->
+
+                <!--</FrameLayout>-->
+
+                <!--</LinearLayout>-->
+
+                <!---->
+                <!--</LinearLayout>-->
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    binding:adapter="@{viewModel.adapter}"
+                    binding:itemBinding="@{viewModel.itemBinding}"
+                    binding:items="@{viewModel.observableList}"
+                    binding:layoutManager="@{LayoutManagers.linear()}"
+                    binding:lineManager="@{LineManagers.horizontal()}" />
+                />
+            </LinearLayout>
+
+</ScrollView>
+    </LinearLayout>
+</layout>

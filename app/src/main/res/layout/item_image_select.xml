@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="@dimen/px230dp"
+        android:layout_height="@dimen/px230dp">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="@dimen/px200dp"
+            android:layout_height="@dimen/px200dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/btn_pic_add" />
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/btn_pic_delete" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
+</layout>

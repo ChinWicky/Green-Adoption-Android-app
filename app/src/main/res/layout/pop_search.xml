@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/popu_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#70000000" />
+
+    <ListView
+        android:id="@+id/popu_list"
+        android:layout_width="@dimen/px184dp"
+        android:layout_height="@dimen/px140dp"
+        android:layout_margin="@dimen/px20dp"
+        android:background="@drawable/draw_ffffff"
+        android:divider="@color/transparent"
+        android:scrollbars="none" />
+
+</FrameLayout>

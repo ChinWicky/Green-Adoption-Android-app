@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="red">#ff0022</color>
+    <color name="colorPrimary">#21d72c</color>
+    <color name="colorPrimaryDark">#3aab15</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="black">#000000</color>
+    <color name="text_999999">#999999</color>
+    <color name="text_333333">#333333</color>
+    <color name="white">#FFFFFF</color>
+    <color name="title_bar_color">#8ffc0a</color>
+    <color name="transparent">#00000000</color>
+    <color name="pressColor">#12000000</color>
+    <color name="main_color">#12102ce1</color>
+    <color name="diver_dcdcdc">#f3f3f8</color>
+    <color name="textColor">#202020</color>
+    <color name="textColorHint">#A0A0A0</color>
+
+</resources>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.graduation_project.wicky.csa.widget.CallPhoneDialog.CallPhoneDialogEvenHandler" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="@dimen/px540dp"
+        android:layout_height="@dimen/px320dp"
+        android:background="@drawable/dialog_shape_white"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tishi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/comfig_call_service_phone"
+                android:textColor="@color/text_333333"
+                android:textSize="@dimen/px30dp" />
+
+            <TextView
+                android:id="@+id/textshow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px20dp"
+                android:gravity="center"
+                android:text="10086"
+                android:textColor="@color/red"
+                android:textSize="@dimen/px30dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px1dp"
+            android:background="@color/diver_dcdcdc" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px100dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/cancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{handler::onClick}"
+                android:text="@string/cancle"
+                android:textSize="@dimen/px28dp"
+                app:bottomLeftRadius="5dp"
+                app:normalSolid="@color/white"
+                app:normalTextColor="#191d21"
+                app:pressedSolid="@color/main_color"
+                app:pressedTextColor="@color/white" />
+
+            <View
+                android:layout_width="@dimen/px1dp"
+                android:layout_height="match_parent"
+                android:background="@color/diver_dcdcdc" />
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/commit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{handler::onClick}"
+                android:text="@string/call_now"
+                android:textSize="@dimen/px28dp"
+                android:textStyle="bold"
+                app:bottomRightRadius="5dp"
+                app:normalSolid="@color/white"
+                app:normalTextColor="@color/red"
+                app:pressedSolid="@color/main_color"
+                app:pressedTextColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

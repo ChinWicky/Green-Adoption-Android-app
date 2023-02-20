@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="item"
+            type="com.graduation_project.wicky.csa.bean.Order"/>
+
+        <variable
+            name="viewModel"
+            type="com.graduation_project.wicky.csa.viewModel.MyAdoptItemViewModel" />
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/px24dp">
+
+        <TextView
+            android:id="@+id/tv_provider_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/px30sp" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@{viewModel.orderStatus}"
+            android:textColor="@color/red"
+            android:textSize="@dimen/px30sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px1dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/tv_orders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        binding:onClickCommand="@{viewModel.itemClick}">
+
+        <ImageView
+            android:id="@+id/iv_orders"
+            android:layout_width="@dimen/px180dp"
+            android:layout_height="@dimen/px180dp"
+            android:layout_margin="@dimen/px24dp"
+            android:src="@{viewModel.drawableImg}"
+            binding:url="@{viewModel.good.goodsImgList.get(0)}"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/px10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_orders_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.good.name}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/px30sp" />
+
+            <TextView
+                android:id="@+id/tv_orders_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px10dp"
+                android:text="@{viewModel.unitPrice}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/px26sp" />
+
+            <TextView
+                android:id="@+id/tv_orders_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px10dp"
+                android:text="@{viewModel.orderNumber}"
+                android:textColor="#6A6A6A"
+                android:textSize="@dimen/px26sp" />
+
+            <TextView
+                android:id="@+id/tv_orders_origin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px10dp"
+                android:textColor="@color/text_999999"
+                android:textSize="@dimen/px24sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px1dp"
+        android:background="@color/white" />
+
+    <!--<LinearLayout-->
+    <!--android:id="@+id/rl_bottom"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:gravity="center_vertical|right"-->
+    <!--android:padding="@dimen/px24dp">-->
+
+    <!--<com.graduation_project.wicky.csa.widget.BGButton-->
+    <!--android:id="@+id/btn_left"-->
+    <!--android:layout_width="@dimen/px170dp"-->
+    <!--android:layout_height="@dimen/px62dp"-->
+    <!--android:layout_marginRight="@dimen/px28dp"-->
+    <!--android:gravity="center"-->
+    <!--android:textSize="@dimen/px26sp"-->
+    <!--binding:bottomLeftRadius="@dimen/px28dp"-->
+    <!--binding:bottomRightRadius="@dimen/px28dp"-->
+    <!--binding:normalSolid="@color/white"-->
+    <!--binding:normalStrokeColor="@color/colorPrimary"-->
+    <!--binding:normalStrokeWidth="@dimen/px2dp"-->
+    <!--binding:normalTextColor="@color/colorPrimary"-->
+    <!--binding:pressedSolid="@color/pressColor"-->
+    <!--binding:topLeftRadius="@dimen/px28dp"-->
+    <!--binding:topRightRadius="@dimen/px28dp"-->
+    <!--android:text="取消"/>-->
+
+    <!--<com.graduation_project.wicky.csa.widget.BGButton-->
+    <!--android:id="@+id/btn_right"-->
+    <!--android:layout_width="@dimen/px170dp"-->
+    <!--android:layout_height="@dimen/px62dp"-->
+    <!--android:layout_marginRight="@dimen/px30dp"-->
+    <!--android:gravity="center"-->
+    <!--android:textSize="@dimen/px26sp"-->
+    <!--binding:bottomLeftRadius="@dimen/px28dp"-->
+    <!--binding:bottomRightRadius="@dimen/px28dp"-->
+    <!--binding:normalSolid="@color/colorPrimary"-->
+    <!--binding:normalTextColor="@color/white"-->
+    <!--binding:pressedSolid="@color/pressColor"-->
+    <!--binding:topLeftRadius="@dimen/px28dp"-->
+    <!--binding:topRightRadius="@dimen/px28dp"-->
+    <!--android:text="确认"/>-->
+
+    <!--</LinearLayout>-->
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.graduation_project.wicky.csa.viewModel.PayViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#efefef"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/title_bar"
+            layout="@layout/widget_title" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px306dp"
+                android:layout_margin="@dimen/px36dp"
+                android:background="@drawable/draw_ffffff"
+                android:gravity="center"
+                android:text="@{String.valueOf(viewModel.entity.sum)}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/px34sp" />
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_order_no"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/px28dp"-->
+            <!--android:textColor="#6A6A6A"-->
+            <!--android:textSize="@dimen/px28sp" />-->
+
+            <!--</LinearLayout>-->
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px304dp"
+                android:layout_below="@id/tv_money"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/px30dp"
+                android:paddingRight="@dimen/px30dp">
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/rb_union"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@color/transparent"-->
+                    <!--android:button="@null"-->
+                    <!--android:drawableLeft="@drawable/ic_money"-->
+                    <!--android:drawablePadding="@dimen/px10dp"-->
+                    <!--android:drawableRight="@drawable/selector_cb_agree"-->
+                    <!--android:text="@string/pay_balance"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="@dimen/px30sp" />-->
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="@color/diver_dcdcdc" />
+
+                <RadioButton
+                    android:id="@+id/rb_zhifubao"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:button="@null"
+                    android:drawableLeft="@mipmap/ic_pay_zhifubao"
+                    android:drawablePadding="@dimen/px10dp"
+                    android:drawableRight="@drawable/selector_cb_agree"
+                    android:text="@string/pay_ali"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px30sp"
+                    app:onClickCommand = "@{viewModel.checkedOnClickCommand}"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="@color/diver_dcdcdc" />
+
+                <RadioButton
+                    android:id="@+id/rb_wenxin"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:button="@null"
+                    android:drawableLeft="@mipmap/ic_pay_weixin"
+                    android:drawablePadding="@dimen/px10dp"
+                    android:drawableRight="@drawable/selector_cb_agree"
+                    android:text="@string/pay_wexin"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px30sp"
+                    app:onClickCommand = "@{viewModel.checkedOnClickCommand}"/>
+
+            </RadioGroup>
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/btn_pay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/px102dp"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:text="支付"
+                android:textSize="@dimen/px36sp"
+                app:normalSolid="@color/colorPrimary"
+                app:normalTextColor="@color/white"
+                app:pressedSolid="@color/pressColor"
+                app:onClickCommand = "@{viewModel.pay}"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

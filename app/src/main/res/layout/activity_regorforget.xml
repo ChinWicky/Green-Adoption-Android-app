@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.graduation_project.wicky.csa.viewModel.RegOrForgViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/title_bar_height"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="18dp"
+                android:drawablePadding="@dimen/px10dp"
+                android:gravity="center"
+                android:scaleType="centerInside"
+                android:src="@mipmap/icon_back" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px26dp"
+            android:layout_marginTop="@dimen/px58dp"
+            android:text="注册"
+            android:textColor="@color/black"
+            android:textSize="@dimen/px48sp" />
+
+
+        <EditText
+            android:id="@+id/et_username"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px90dp"
+            android:layout_marginLeft="@dimen/px26dp"
+            android:layout_marginRight="@dimen/px26dp"
+            android:layout_marginTop="@dimen/px22dp"
+            android:background="@drawable/draw_login"
+            android:hint="请输入用户名"
+            android:maxLength="11"
+            android:paddingLeft="@dimen/px34dp"
+            android:text="@={viewModel.userName}"
+            android:textColor="@color/black"
+            android:textColorHint="@color/text_999999"
+            android:textSize="@dimen/px38sp" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px90dp"
+            android:layout_marginLeft="@dimen/px26dp"
+            android:layout_marginRight="@dimen/px26dp"
+            android:layout_marginTop="@dimen/px36dp"
+            android:background="@drawable/draw_login"
+            android:hint="请输入手机号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:paddingLeft="@dimen/px34dp"
+            android:text="@={viewModel.phone}"
+            android:textColor="@color/black"
+            android:textColorHint="@color/text_999999"
+            android:textSize="@dimen/px38sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px90dp"
+            android:layout_marginLeft="@dimen/px26dp"
+            android:layout_marginRight="@dimen/px26dp"
+            android:layout_marginTop="@dimen/px32dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/draw_login"
+                android:hint="请输入验证码"
+                android:inputType="number"
+                android:maxLength="6"
+                android:paddingLeft="@dimen/px34dp"
+                android:text="@={viewModel.code}"
+                android:textColor="@color/black"
+                android:textColorHint="@color/text_999999"
+                android:textSize="@dimen/px38sp" />
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/btn_getCode"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/px32dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="获取验证码"
+                android:textSize="@dimen/px36sp"
+                app:normalSolid="@color/green"
+                app:normalTextColor="@color/white"
+                app:onClickCommand="@{viewModel.getCheckCode}" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px90dp"
+            android:layout_marginLeft="@dimen/px26dp"
+            android:layout_marginRight="@dimen/px26dp"
+            android:layout_marginTop="@dimen/px36dp"
+            android:background="@drawable/draw_login"
+            android:hint="设置密码"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/px34dp"
+            android:text="@={viewModel.password}"
+            android:textColor="@color/black"
+            android:textColorHint="@color/text_999999"
+            android:textSize="@dimen/px38sp" />
+
+        <EditText
+            android:id="@+id/et_passwordAgain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px90dp"
+            android:layout_marginLeft="@dimen/px26dp"
+            android:layout_marginRight="@dimen/px26dp"
+            android:layout_marginTop="@dimen/px36dp"
+            android:background="@drawable/draw_login"
+            android:hint="再次确认密码"
+            android:inputType="textPassword"
+            android:paddingLeft="@dimen/px34dp"
+            android:text="@={viewModel.againPassword}"
+            android:textColor="@color/black"
+            android:textColorHint="@color/text_999999"
+            android:textSize="@dimen/px38sp" />
+
+
+        <com.graduation_project.wicky.csa.widget.BGButton
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px90dp"
+            android:layout_marginLeft="@dimen/px26dp"
+            android:layout_marginRight="@dimen/px26dp"
+            android:layout_marginTop="@dimen/px94dp"
+            android:gravity="center"
+            android:text="@string/confirm"
+            android:textSize="@dimen/px36sp"
+            app:bottomLeftRadius="@dimen/px44dp"
+            app:bottomRightRadius="@dimen/px44dp"
+            app:normalSolid="@color/green"
+            app:normalTextColor="@color/white"
+            app:onClickCommand="@{viewModel.confirm}"
+            app:topLeftRadius="@dimen/px44dp"
+            app:topRightRadius="@dimen/px44dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_agree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px44dp"
+            android:layout_marginRight="@dimen/px44dp"
+            android:layout_marginTop="@dimen/px30dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/cb_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/selector_cb_agree"
+                android:text="我已仔细阅读并同意"
+                android:textColor="#6A6A6A"
+                android:textSize="@dimen/px26sp"
+                 />
+
+            <TextView
+                android:id="@+id/tv_xieyi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="《用户协议》"
+                android:textColor="@color/red"
+                android:textSize="@dimen/px26sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

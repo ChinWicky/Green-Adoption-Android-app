@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.graduation_project.wicky.csa.viewModel.OrderDetailViewModel" />
+
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/title_bar"
+            layout="@layout/widget_title" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="74dp"
+                    android:background="#faecec"
+                    android:padding="@dimen/px30dp">
+
+                    <TextView
+                        android:id="@+id/tv_orders_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.entity.orderNumber}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px32sp" />
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@{viewModel.orderStatus}"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/px32sp" />
+
+                    <TextView
+                        android:id="@+id/tv_suppler_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="@{viewModel.user.userName}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px32sp" />
+
+                    <TextView
+                        android:id="@+id/tv_suppler_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@id/tv_suppler_name"
+                        android:text="@{viewModel.user.phone}"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px32sp" />
+
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px20dp" />
+
+                <!--<com.simga.library.widget.NListView-->
+                <!--android:id="@+id/listview"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:divider="@color/diver_dcdcdc"-->
+                <!--android:dividerHeight="@dimen/px1dp" />-->
+                <LinearLayout
+                    android:id="@+id/tv_orders"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_orders"
+                        android:layout_width="@dimen/px180dp"
+                        android:layout_height="@dimen/px180dp"
+                        android:layout_margin="@dimen/px24dp"
+                        app:url="@{viewModel.good.goodsImgList.get(0)}"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/px10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_orders_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.good.name}"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/px30sp" />
+
+                        <TextView
+                            android:id="@+id/tv_orders_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px10dp"
+                            android:text="@{String.format(@string/money,viewModel.good.price)}"
+                            android:textColor="@color/red"
+                            android:textSize="@dimen/px26sp" />
+
+                        <TextView
+                            android:id="@+id/tv_orders_num"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px10dp"
+                            android:text="@{String.format(@string/amount,viewModel.entity.amount)}"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                        <TextView
+                            android:id="@+id/tv_orders_origin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/px10dp"
+                            android:textColor="@color/text_999999"
+                            android:textSize="@dimen/px24sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/px30dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total_price"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                        <TextView
+                            android:id="@+id/tv_goods_sum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@{String.format(@string/money,viewModel.entity.goodTotal)}"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="0dp"
+                            android:text="@string/contract_year"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                        <TextView
+                            android:id="@+id/tv_yunfei"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@{String.format(@string/year,viewModel.entity.year)}"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                    </RelativeLayout>
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/insurance_price"-->
+                    <!--android:textColor="#6A6A6A"-->
+                    <!--android:textSize="@dimen/px26sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_insurance"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:textColor="#6A6A6A"-->
+                    <!--android:textSize="@dimen/px26sp" />-->
+
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/rl_earnest"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:visibility="gone">-->
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/earnest"-->
+                    <!--android:textColor="#6A6A6A"-->
+                    <!--android:textSize="@dimen/px26sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_earnest"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:textColor="#6A6A6A"-->
+                    <!--android:textSize="@dimen/px26sp" />-->
+
+                    <!--</RelativeLayout>-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_tag_sum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/total"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                        <TextView
+                            android:id="@+id/tv_sum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="@{String.format(@string/money,viewModel.entity.sum)}"
+                            android:textColor="#6A6A6A"
+                            android:textSize="@dimen/px26sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px20dp" />
+
+                <TextView
+                    android:id="@+id/tv_beizhu"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:background="@color/white"
+                    android:hint="备注"
+                    android:padding="@dimen/px10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px26sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px20dp" />
+
+                <TextView
+                    android:id="@+id/tv_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@color/white"
+                    android:hint="留言板"
+                    android:padding="@dimen/px10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/px26sp" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+                        android:id="@+id/twinklingRefreshLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:onLoadMoreCommand="@{viewModel.onLoadMoreCommand}"
+                        app:onRefreshCommand="@{viewModel.onRefreshCommand}"
+                        app:tr_head_height="80dp">
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recyclerView"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/px330dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            app:adapter="@{viewModel.adapter}"
+                            app:itemBinding="@{viewModel.itemBinding}"
+                            app:items="@{viewModel.observableList}"
+                            app:layoutManager="@{LayoutManagers.linear()}"
+                            app:lineManager="@{LineManagers.horizontal()}" />
+                    </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+                </ScrollView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:padding="@dimen/px24dp">
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/btn_ask"
+                android:layout_width="@dimen/px150dp"
+                android:layout_height="@dimen/px100dp"
+                android:layout_alignParentLeft="true"
+                android:drawableTop="@mipmap/tab_ic_ask"
+                android:gravity="center"
+                android:padding="@dimen/px10dp"
+                android:text="留言"
+                android:textSize="@dimen/px24sp"
+                app:normalSolid="@color/white"
+                app:normalTextColor="#6A6A6A"
+                app:pressedSolid="@color/pressColor" />
+
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/btn_cal"
+                android:layout_width="@dimen/px150dp"
+                android:layout_height="@dimen/px100dp"
+                android:layout_toRightOf="@id/btn_ask"
+                android:drawableTop="@mipmap/icon_call"
+                android:gravity="center"
+                android:paddingTop="@dimen/px8dp"
+                android:text="打电话"
+                android:textSize="@dimen/px24sp"
+                app:normalSolid="@color/white"
+                app:normalTextColor="#6a6a6a"
+                app:onClickCommand="@{viewModel.phoneContactOnClickCommand}"
+                app:pressedSolid="@color/main_color"
+                app:pressedTextColor="@color/white" />
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/btn_right"
+                android:layout_width="@dimen/px170dp"
+                android:layout_height="@dimen/px62dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/px20dp"
+                android:gravity="center"
+                android:textSize="@dimen/px26sp"
+                app:bottomLeftRadius="@dimen/px28dp"
+                app:bottomRightRadius="@dimen/px28dp"
+                app:normalSolid="@color/colorPrimary"
+                app:normalTextColor="@color/white"
+                app:pressedSolid="@color/pressColor"
+                app:topLeftRadius="@dimen/px28dp"
+                app:topRightRadius="@dimen/px28dp"
+                android:text="收获"/>
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/btn_left"
+                android:layout_width="@dimen/px170dp"
+                android:layout_height="@dimen/px62dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="@dimen/px20dp"
+                android:layout_marginTop="@dimen/px20dp"
+                android:layout_toLeftOf="@id/btn_right"
+                android:gravity="center"
+                android:textSize="@dimen/px26sp"
+                app:bottomLeftRadius="@dimen/px28dp"
+                app:bottomRightRadius="@dimen/px28dp"
+                app:normalSolid="@color/white"
+                app:normalStrokeColor="@color/colorPrimary"
+                app:normalStrokeWidth="@dimen/px2dp"
+                app:normalTextColor="@color/colorPrimary"
+                app:pressedSolid="@color/pressColor"
+                app:topLeftRadius="@dimen/px28dp"
+                app:topRightRadius="@dimen/px28dp"
+                android:text="返回"/>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

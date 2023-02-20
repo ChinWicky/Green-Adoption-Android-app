@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/widget_title" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/listview_outer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:scrollbars="none" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px1dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <CheckBox
+                android:id="@+id/cb_select_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/px30dp"
+                android:button="@drawable/selector_cb_agree"
+                android:padding="@dimen/px10dp"
+                android:text="@string/select_all"
+                android:textColor="@color/text_333333"
+                android:textSize="@dimen/px30sp" />
+
+            <TextView
+                android:id="@+id/tv_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/px40dp"
+                android:layout_toRightOf="@id/cb_select_all"
+                android:text="@string/actual_payment"
+                android:textColor="@color/text_333333"
+                android:textSize="@dimen/px30sp" />
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/tv_sum"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/px34sp" />
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/btn_calculate"
+                android:layout_width="@dimen/px224dp"
+                android:layout_height="@dimen/px102dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:padding="@dimen/px30dp"
+                android:text="@string/settlement_with_num"
+                android:textSize="@dimen/px30sp"
+                app:normalSolid="@color/colorPrimary"
+                app:normalTextColor="@color/white"
+                app:pressedSolid="@color/pressColor" />
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/btn_delete"
+                android:layout_width="@dimen/px224dp"
+                android:layout_height="@dimen/px102dp"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:padding="@dimen/px30dp"
+                android:text="@string/delete"
+                android:textSize="@dimen/px30sp"
+                android:visibility="gone"
+                app:normalSolid="@color/colorPrimary"
+                app:normalTextColor="@color/white"
+                app:pressedSolid="@color/pressColor" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px160dp"
+            android:src="@mipmap/pic_nocontent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_shopping"
+            android:textColor="@color/text_999999"
+            android:textSize="@dimen/px30sp" />
+
+        <com.simga.library.widget.BGButton
+            android:id="@+id/btn_browse"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px90dp"
+            android:layout_marginLeft="@dimen/px78dp"
+            android:layout_marginTop="@dimen/px94dp"
+            android:layout_marginRight="@dimen/px78dp"
+            android:gravity="center"
+            android:text="@string/go_for_walk"
+            android:textSize="@dimen/px36sp"
+            app:bottomLeftRadius="@dimen/px44dp"
+            app:bottomRightRadius="@dimen/px44dp"
+            app:normalSolid="@color/colorPrimary"
+            app:normalTextColor="@color/white"
+            app:pressedSolid="@color/pressColor"
+            app:topLeftRadius="@dimen/px44dp"
+            app:topRightRadius="@dimen/px44dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.graduation_project.wicky.csa.viewModel.ReleaseOrEditViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/title_bar"
+            layout="@layout/widget_title" />
+
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px66dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/px24dp"
+                    android:text="商品信息"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/px26sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/good_name"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <EditText
+                        android:id="@+id/et_goodsname"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:layout_weight="2.3"
+                        android:background="@color/white"
+                        android:gravity="right"
+                        android:hint="@string/please_input_good_name"
+                        android:paddingLeft="@dimen/px10dp"
+                        android:text="@={viewModel.entity.name}"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/px30sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="#f8f8f8" />
+
+                <LinearLayout
+                    android:id="@+id/ll_choose_cate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/good_type"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <TextView
+                        android:id="@+id/tv_category"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:layout_weight="2.3"
+                        android:drawableRight="@mipmap/ic_next"
+                        android:gravity="right"
+                        android:hint="@string/please_choose_good_type"
+                        android:text="@={viewModel.category}"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/px30sp"
+                        binding:onClickCommand="@{viewModel.chooseType}" />
+                </LinearLayout>
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px1dp"-->
+                <!--android:background="#f8f8f8" />-->
+
+                <!--<LinearLayout-->
+                <!--android:id="@+id/ll_choose_level"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px130dp"-->
+                <!--android:background="@drawable/button_select"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/px24dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:text="@string/level"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="@dimen/px30sp" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_level"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="@dimen/px24dp"-->
+                <!--android:layout_weight="2.3"-->
+                <!--android:drawableRight="@mipmap/ic_next"-->
+                <!--android:gravity="right"-->
+                <!--android:text="@string/please_choose_goods_level"-->
+                <!--android:textColor="#999999"-->
+                <!--android:textSize="@dimen/px30sp" />-->
+                <!--</LinearLayout>-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="#f8f8f8" />
+
+                <LinearLayout
+                    android:id="@+id/ll_choose_country_of_origin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/place"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <TextView
+                        android:id="@+id/tv_country_of_origin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:layout_weight="2.3"
+                        android:drawableRight="@mipmap/ic_next"
+                        android:gravity="right"
+                        android:text="@string/please_choose_place"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/px30sp"
+                        binding:onClickCommand="@{viewModel.choosePlace}" />
+                </LinearLayout>
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px1dp"-->
+                <!--android:background="#f8f8f8" />-->
+
+                <!--<LinearLayout-->
+                <!--android:id="@+id/ll_choose_consignment_place"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px130dp"-->
+                <!--android:background="@drawable/button_select"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/px24dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:text="@string/consignment_place"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="@dimen/px30sp" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tv_consignment_place"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="@dimen/px24dp"-->
+                <!--android:layout_weight="2.3"-->
+                <!--android:drawableRight="@mipmap/ic_next"-->
+                <!--android:gravity="right"-->
+                <!--android:text="@string/please_choose_consignment_place"-->
+                <!--android:textColor="#999999"-->
+                <!--android:textSize="@dimen/px30sp" />-->
+                <!--</LinearLayout>-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="#f8f8f8" />
+
+                <LinearLayout
+                    android:id="@+id/ll_choose_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/price"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <EditText
+                        android:id="@+id/tv_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.3"
+                        android:background="@color/white"
+                        android:gravity="right"
+                        android:hint="@string/please_input_price"
+                        android:inputType="numberDecimal"
+                        android:paddingLeft="@dimen/px10dp"
+                        android:text="@={viewModel.price}"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/px30sp" />
+
+                    <TextView
+                        android:id="@+id/tv_price_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:gravity="center_vertical"
+                        android:text="元"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="#f8f8f8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px130dp"
+                    android:background="@drawable/button_select"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="@string/inventory"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+
+                    <EditText
+                        android:id="@+id/et_stock"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.3"
+                        android:background="@color/white"
+                        android:gravity="right"
+                        android:hint="@string/please_input_inventory"
+                        android:inputType="number"
+                        android:paddingLeft="@dimen/px10dp"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/px30sp"
+                        android:text="@={viewModel.inventory}"/>
+
+                    <TextView
+                        android:id="@+id/tv_good_inventory_unit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px30sp" />
+                </LinearLayout>
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px1dp"-->
+                <!--android:background="#f8f8f8" />-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px130dp"-->
+                <!--android:background="@drawable/button_select"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/px24dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:text="运费"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="@dimen/px30sp" />-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/et_freight"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="2.3"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="right"-->
+                <!--android:inputType="number"-->
+                <!--android:hint="请输入运费"-->
+                <!--android:paddingLeft="@dimen/px10dp"-->
+                <!--android:textColor="#999999"-->
+                <!--android:textSize="@dimen/px30sp" />-->
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/px24dp"-->
+                <!--android:layout_marginRight="@dimen/px24dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:text="元"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="@dimen/px30sp" />-->
+                <!--</LinearLayout>-->
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px1dp"-->
+                <!--android:background="#f8f8f8" />-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px130dp"-->
+                <!--android:background="@drawable/button_select"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/px24dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:text="保险费"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="@dimen/px30sp" />-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/et_insurance"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="2.3"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="right"-->
+                <!--android:inputType="number"-->
+                <!--android:hint="请输入保险费"-->
+                <!--android:paddingLeft="@dimen/px10dp"-->
+                <!--android:textColor="#999999"-->
+                <!--android:textSize="@dimen/px30sp" />-->
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/px24dp"-->
+                <!--android:layout_marginRight="@dimen/px24dp"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:text="元"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="@dimen/px30sp" />-->
+                <!--</LinearLayout>-->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px1dp"
+                    android:background="#f8f8f8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px100dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/px24dp"
+                    android:paddingRight="@dimen/px24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="@string/good_main_image"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/px26sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/px10dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/first_image"
+                        android:textColor="#6a6a6a"
+                        android:textSize="@dimen/px26sp" />
+
+                    <TextView
+                        android:id="@+id/tv_detailsNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|right"
+                        android:text="0/5"
+                        android:textColor="#6a6a6a"
+                        android:textSize="@dimen/px26sp" />
+                </LinearLayout>
+
+                <com.graduation_project.wicky.csa.widget.NGridView
+                    android:id="@+id/details_goods_gridview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:horizontalSpacing="@dimen/px20dp"
+                    android:listSelector="@color/transparent"
+                    android:numColumns="3"
+                    android:padding="@dimen/px24dp"
+                    android:scrollbars="none"
+                    android:verticalSpacing="@dimen/px20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px66dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/px24dp"
+                    android:text="@string/graphic_details"
+                    android:textColor="#6a6a6a"
+                    android:textSize="@dimen/px26sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/px320dp"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/et_instructions"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/px250dp"
+                        android:layout_marginLeft="@dimen/px24dp"
+                        android:layout_marginRight="@dimen/px24dp"
+                        android:layout_marginTop="@dimen/px30dp"
+                        android:background="#f3f3f3"
+                        android:gravity="top"
+                        android:hint="@string/please_input_good_detail"
+                        android:padding="@dimen/px30dp"
+                        android:textColor="#999999"
+                        android:textColorHint="#999999"
+                        android:textSize="@dimen/px32sp"
+                        android:text="@={viewModel.entity.description}"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/px100dp"
+                        android:background="@color/white"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="@dimen/px24dp"
+                        android:paddingRight="@dimen/px24dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="@string/video"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/px26sp" />
+
+                        <TextView
+                            android:id="@+id/tv_masterNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|right"
+                            android:text="0/1"
+                            android:textColor="#6a6a6a"
+                            android:textSize="@dimen/px26sp" />
+                    </LinearLayout>
+
+                    <com.graduation_project.wicky.csa.widget.NGridView
+                        android:id="@+id/master_goods_gridview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:horizontalSpacing="@dimen/px20dp"
+                        android:listSelector="@color/transparent"
+                        android:numColumns="1"
+                        android:padding="@dimen/px24dp"
+                        android:scrollbars="none"
+                        android:verticalSpacing="@dimen/px20dp" />
+                </LinearLayout>
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/px120dp"/>-->
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.graduation_project.wicky.csa.widget.BGButton
+                android:id="@+id/btn_confirm"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/px100dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/px10dp"
+                android:text="@string/confirm"
+                binding:normalSolid="@color/colorPrimary"
+                binding:normalTextColor="@color/white"
+                binding:onClickCommand="@{viewModel.addGoodInfo}"
+                binding:pressedSolid="@color/pressColor" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
