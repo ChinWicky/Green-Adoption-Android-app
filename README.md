@@ -40,9 +40,9 @@ Retrofit, OkHttp, RxJava
 Interface images from the app
 
 <p align="center">
-    <img src="/image/login.jpg" alt="login" />
+    <img src="/image/login.jpg" alt="login" width="200" height="400" />
 </p>
 
 <p align="center">
-    <img src="/image/goodlist.jpg" alt="good list" />
+    <img src="/image/goodslist.jpg" alt="good list" />
 </p>
