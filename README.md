@@ -32,7 +32,7 @@ Retrofit, OkHttp, RxJava
 </p>
 2. After installing the app, an application icon will appear on the mobile interface, and you can click on it to run the program. However, you need to deploy the server first.
 <p align="center">
-    <img src="/image/icon.jpg" alt="app icon" />
+    <img src="/image/icon.jpg" alt="app icon"  width="200" height="200"/>
 </p>
 
 ## Images
@@ -40,9 +40,9 @@ Retrofit, OkHttp, RxJava
 Interface images from the app
 
 <p align="center">
-    <img src="/image/login.jpg" alt="login" width="200" height="400" />
+    <img src="/image/login.jpg" alt="login" width="300" height="600" />
 </p>
 
 <p align="center">
-    <img src="/image/goodslist.jpg" alt="good list" />
+    <img src="/image/goodslist.jpg" alt="good list" width="300" height="600"/>
 </p>
