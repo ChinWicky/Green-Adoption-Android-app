@@ -28,10 +28,11 @@ Retrofit, OkHttp, RxJava
 <p align="center">
     <img src="/image/release.jpg" alt="release.apk" />
 </p>
-2. 
+2. After installing the app, an application icon will appear on the mobile interface, and you can click on it to run the program. However, you need to deploy the server first.
 <p align="center">
     <img src="/image/icon.jpg" alt="app icon" />
 </p>
+
 ## Images
 <p align="center">
     <img src="/image/icon.jpg" alt="app icon" />
