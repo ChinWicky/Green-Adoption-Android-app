@@ -15,7 +15,9 @@ This Android client adopts the MVVM design pattern, dividing the software into t
 - the View layer (presentation layer) 
 - the ViewModel layer (core business logic layer)
 - the Model layer (model layer and network interface layer)
-
+<p align="center">
+    <img src="/image/design.png" alt="design" />
+</p>
 
 ### Programming language
 JAVA
@@ -35,8 +37,12 @@ Retrofit, OkHttp, RxJava
 
 ## Images
 
-Sample image from the app
+Interface images from the app
 
 <p align="center">
-    <img src="/image/icon.jpg" alt="app icon" />
+    <img src="/image/login.jpg" alt="login" />
+</p>
+
+<p align="center">
+    <img src="/image/goodlist.jpg" alt="good list" />
 </p>
