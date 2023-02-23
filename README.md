@@ -24,7 +24,14 @@ Network request
 Retrofit, OkHttp, RxJava
 
 ## Building the app
-
+1. To install the app, you can run the app-release.apk package on an Android device or connect the device to a computer via USB and use a phone assistant to install the apk package.
+<p align="center">
+    <img src="/image/release.jpg" alt="release.apk" />
+</p>
+2. 
+<p align="center">
+    <img src="/image/icon.jpg" alt="app icon" />
+</p>
 ## Images
 <p align="center">
     <img src="/image/icon.jpg" alt="app icon" />
