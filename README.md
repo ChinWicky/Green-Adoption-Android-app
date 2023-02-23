@@ -1,5 +1,7 @@
-# p2p-Android-app
+# Green Adoption-Android-app
+This repository contains the source code for the Green Adoption Android app.  
 
+You will need JDK 1.8+ installed to work with it. Gradle, Android SDK, and project dependencies will be downloaded automatically.
 
 ## Introduction
 - My project is a graduation design project from my undergraduate studies. 
