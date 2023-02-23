@@ -24,4 +24,6 @@ Retrofit, OkHttp, RxJava
 ## Building the app
 
 ## Images
-![icon](/image/icon.jpg)
+<p align="center">
+    <img src="/image/icon.jpg" alt="app icon" />
+</p>
