@@ -17,10 +17,10 @@ This Android client adopts the MVVM design pattern, dividing the software into t
 - the Model layer (model layer and network interface layer)
 
 
-programming language
+##Programming language
 JAVA
 
-Network request
+##Network request
 Retrofit, OkHttp, RxJava
 
 ## Building the app
